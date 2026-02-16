@@ -1,0 +1,210 @@
+/* FullCalendar Styles 
+@import '@fullcalendar/core/main.css';
+@import '@fullcalendar/daygrid/main.css';*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  * {
+    @apply border-border-light dark:border-border-dark;
+  }
+  
+  body {
+    @apply bg-background-light dark:bg-background-dark;
+    @apply text-text-primary-light dark:text-text-primary-dark;
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light;
+    @apply focus:ring-primary-light;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-border-light dark:border-border-dark;
+    @apply hover:bg-surface-light dark:hover:bg-surface-dark;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-dark;
+    @apply focus:ring-accent;
+  }
+  
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-surface-light dark:bg-surface-dark;
+    @apply border border-border-light dark:border-border-dark;
+    @apply rounded-card p-6;
+    @apply shadow-soft;
+  }
+  
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-2 rounded-lg;
+    @apply bg-white dark:bg-surface-dark;
+    @apply border border-border-light dark:border-border-dark;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary;
+    @apply transition-all duration-200;
+  }
+  
+  /* Labels */
+  .label {
+    @apply block text-sm font-medium mb-2;
+    @apply text-text-primary-light dark:text-text-primary-dark;
+  }
+  
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-pending {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+  }
+  
+  .badge-approved {
+    @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+  }
+  
+  .badge-rejected {
+    @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* FullCalendar Custom Styling */
+.fc {
+  font-family: inherit;
+}
+
+/* Header giorni settimana - sfondo colorato */
+.fc .fc-col-header-cell {
+  background-color: #f3f4f6 !important;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 12px 0;
+}
+
+.dark .fc .fc-col-header-cell {
+  background-color: #1e293b !important;
+}
+
+/* Celle giorni */
+.fc .fc-daygrid-day {
+  cursor: pointer;
+}
+
+.fc .fc-daygrid-day:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.dark .fc .fc-daygrid-day:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Testo calendario scuro in dark mode */
+.dark .fc {
+  color: #f1f5f9;
+}
+
+.dark .fc .fc-button {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+.dark .fc .fc-button:hover {
+  background-color: #334155;
+}
+
+.dark .fc .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Titolo mese/settimana con iniziale maiuscola */
+.fc .fc-toolbar-title {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Eventi */
+.fc-event {
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 0.875rem;
+}
+
+.fc-daygrid-event {
+  white-space: normal;
+}
+
+/* FullCalendar Foresteria Styles */
+.foresteria-calendar {
+  --fc-border-color: var(--border-light);
+  --fc-button-bg-color: #000000;
+  --fc-button-border-color: #000000;
+  --fc-button-hover-bg-color: #333333;
+  --fc-button-hover-border-color: #333333;
+  --fc-button-active-bg-color: #333333;
+  --fc-today-bg-color: rgba(59, 130, 246, 0.1);
+}
+
+.dark .foresteria-calendar {
+  --fc-border-color: #334155;
+  --fc-page-bg-color: #0F172A;
+  --fc-neutral-bg-color: #1E293B;
+}
+
+.fc {
+  font-family: inherit;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border-color: var(--fc-border-color);
+}
+
+.fc-day-today {
+  background: var(--fc-today-bg-color) !important;
+}
+
+.fc-event {
+  font-size: 0.75rem;
+  padding: 1px 3px;
+  margin: 1px 0;
+}
+
+.fc-daygrid-day {
+  cursor: pointer;
+}
+
+.fc-daygrid-day:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.dark .fc-daygrid-day:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
