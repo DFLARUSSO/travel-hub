@@ -45,7 +45,11 @@ export function PresenceCalendar({ onDateClick, presences = [], onEventClick }) 
       }
     }
   })
-  
+
+  const [currentView, setCurrentView] = useState('Mese')
+
+  const handleViewChange = (view) => setCurrentView(view)
+
   return (
     <div className="presence-calendar">
       <FullCalendar
@@ -55,11 +59,12 @@ export function PresenceCalendar({ onDateClick, presences = [], onEventClick }) 
         headerToolbar={{
           left: 'prev,next today',
           center: 'title',
-          right: 'dayGridMonth'
+          right: 'dayGridWeek,dayGridMonth'
         }}
         buttonText={{
           today: 'Oggi',
           month: 'Mese',
+          week: 'Settimana',
         }}
         events={events}
         dateClick={onDateClick}
