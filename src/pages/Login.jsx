@@ -37,7 +37,7 @@ export function Login() {
             <span className="text-4xl font-bold text-primary">DFL</span>
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">Digital Fashion Leading</h1>
-          <p className="text-white/80">Sistema Gestione Aziendale</p>
+          <p className="text-white/80">Travel HUB</p>
         </div>
         
         {/* Login Form */}
@@ -48,7 +48,7 @@ export function Login() {
             <Input
               type="email"
               label="Email"
-              placeholder="nome@digitalfashionleading.com"
+              placeholder="nome.cognome@dflconsulting.it"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required

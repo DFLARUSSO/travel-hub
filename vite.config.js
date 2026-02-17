@@ -15,6 +15,7 @@ export default defineConfig({
     open: true
   },
   build: {
+    outDir: 'dist',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -23,5 +24,4 @@ export default defineConfig({
       }
     }
   }
-
 })
